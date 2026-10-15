@@ -1,6 +1,6 @@
 # Testing Prompt Injection Resistance in Document-Based AI Assistants
 
-**Status:** Reproducible research *prototype*. The synthetic test set and evaluator are implemented. **No LLM performance claims have been made or measured in this repository.**
+**Status:** Reproducible research *prototype*. The synthetic test set and evaluator are implemented. **This repository documents five exploratory experiments evaluating prompt-injection resistance in document-based AI assistants. The experiments include manually collected ChatGPT responses and locally executed Qwen2.5:0.5b evaluations using Ollama. Results are reported alongside the evaluation methodology, raw responses, human-reviewed findings and limitations. Findings are specific to the tested scenarios, models and conditions and should not be interpreted as general model-security benchmarks.**
 
 **Research focus:** AI safety, adversarial robustness, instruction hierarchy and evaluation methodology.
 
