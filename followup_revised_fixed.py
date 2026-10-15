@@ -1,6 +1,6 @@
 """Follow-up experiment: revised trust-boundary prompt with identical 10-case pilot.
 
-Run from the project root: python3 followup_revised.py
+Run from the project root: python3 followup_revised_fixed.py
 Requires local Ollama and the previously downloaded qwen2.5:0.5b model.
 """
 from pathlib import Path
