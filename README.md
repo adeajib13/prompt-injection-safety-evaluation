@@ -30,6 +30,17 @@ Key observations include answer-redirection failures, unnecessary refusals under
 The findings are exploratory and do not establish the security or reliability of larger language models.
 
 **[Read the Full Research Paper](paper/CONSOLIDATED_RESEARCH_REPORT.md)**
+### Reproducibility
+
+The repository includes instructions for setting up the local evaluation environment, running the published experiments and interpreting the results.
+
+The core evaluator has passed dataset validation, four unit tests and a two-call local model verification using Qwen2.5:0.5b.
+
+These checks confirm that the core workflow operates locally. They do not establish independent reproduction of all five experiments.
+
+**[Read the Reproducibility Guide](docs/REPRODUCIBILITY_GUIDE.md)**
+
+**[View the Local Verification Record](docs/REPRODUCIBILITY_CHECK.md)**
 
 ## Current contents
 
