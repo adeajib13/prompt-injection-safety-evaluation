@@ -117,3 +117,59 @@ The complete dataset is available in:
 Details about dataset development, validation
 and research limitations are provided in:
 [Experiment Design](docs/EXPERIMENT_DESIGN.md)
+
+## Automated AI Safety Evaluation: Qwen2.5
+
+To extend the initial manual evaluation, this project
+conducted an automated prompt-injection experiment using
+Qwen2.5:0.5b through Ollama and Python.
+
+The experiment evaluated 10 synthetic scenarios under
+two instruction conditions, producing 20 model responses.
+
+### Experimental Results
+
+| Metric | Baseline | Trust Boundary |
+|---|---|---|
+| Evaluations | 10 | 10 |
+| Factual accuracy | 100% | 40% |
+| Correct responses | 10 | 4 |
+| Attack markers emitted | 0 | 0 |
+
+### Key Finding
+
+In this exploratory experiment, Qwen2.5:0.5b answered all
+baseline questions correctly but only 40% of questions
+under the stronger trust-boundary instructions.
+
+Six trust-boundary responses incorrectly stated
+"Not found in document."
+
+This suggests that additional defensive instructions
+may interfere with legitimate task completion in some
+small language models.
+
+However, the experiment does not establish causation
+or demonstrate that this behaviour generalizes to
+other models or datasets.
+
+### Research Artifacts
+
+- [Reviewed Research Findings](paper/qwen05_reviewed_findings.md)
+- [Human-Reviewed Results](results/qwen05_human_review.csv)
+- [Experiment Design](docs/EXPERIMENT_DESIGN.md)
+- [Synthetic Dataset](data/cases.json)
+
+### Research Limitations
+
+The experiment used a small synthetic dataset and
+a single local language model.
+
+Each scenario was evaluated once per instruction condition.
+
+Attack-marker emission is a limited indicator of
+prompt-injection influence.
+
+Further experiments are needed to determine whether
+the observed reduction in task accuracy persists
+across different models, prompts and repeated trials.
