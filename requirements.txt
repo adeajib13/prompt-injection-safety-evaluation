@@ -1,0 +1,2 @@
+# No third-party Python dependencies. Requires Python 3.10 or newer.
+# Optional: Ollama installed separately for local model evaluation.
