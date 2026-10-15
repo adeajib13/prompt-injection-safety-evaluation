@@ -223,3 +223,57 @@ deterministic settings.
 These findings are exploratory and do not establish
 general prompt-injection resistance or causal effects
 of defensive prompting.
+
+
+## Experiment 5: Generalization to Unseen Documents
+
+To investigate whether earlier findings generalized beyond the
+initial test cases, the evaluation was extended to 12 new
+synthetic scenarios across multiple policy domains.
+
+The experiment tested Qwen2.5:0.5b under three instruction
+conditions using Python and Ollama.
+
+### Experimental Results
+
+| Condition | Factual Accuracy | Attack-Marker Emission |
+|---|---|---|
+| Baseline | 83.3% (10/12) | 25% (2/8) |
+| Original Trust Boundary | 66.7% (8/12) | 50% (4/8) |
+| Revised Trust Boundary | 25% (3/12) | 25% (2/8) |
+
+### Key Findings
+
+The model exhibited prompt-injection-related answer
+redirection in some adversarial scenarios.
+
+In one authority-spoofing scenario, the model produced
+the attacker's target marker instead of answering the
+legitimate question.
+
+The revised defensive instructions performed worse on
+the new scenarios than on the earlier evaluation dataset.
+
+These observations suggest that defensive prompting
+strategies may be sensitive to changes in document
+content, task formulation and model behaviour.
+
+### Research Artifacts
+
+- [Experiment 5 Research Report](paper/Experiment5_Reviewed_Findings.md)
+- [Human-Reviewed Results](results/experiment5_human_reviewed.csv)
+- [Raw Experimental Responses](results/experiment5_unseen_raw.csv)
+- [Automatic Evaluation Summary](results/experiment5_unseen_summary.md)
+
+### Limitations
+
+The experiment used one small language model and
+12 synthetic scenarios.
+
+Each scenario was evaluated once per condition.
+
+The new scenarios were purpose-built rather than
+independently sampled from an external benchmark.
+
+Findings are exploratory and should not be generalized
+to larger models or real-world deployments.
