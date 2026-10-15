@@ -65,4 +65,82 @@ The adversary controls the body of a retrieved document. The adversary does **no
 
 ## Future work
 
+## Dataset Provenance and Development
+
+### 1. Dataset Origin
+
+This research uses a synthetic dataset containing 40 AI safety evaluation scenarios, comprising 32 adversarial prompt-injection cases and 8 clean control cases.
+
+The initial dataset was generated with assistance from OpenAI's ChatGPT to support research into prompt-injection vulnerabilities in document-based AI assistants.
+
+The scenarios were created specifically for this project and do not contain real user data, confidential enterprise information or proprietary Anthropic datasets.
+
+### 2. Research Objective
+
+The research investigates whether malicious instructions embedded in external documents can influence an AI assistant to disregard legitimate user instructions.
+
+It also examines whether explicitly defining trust boundaries between trusted instructions and untrusted document content improves resistance to prompt-injection attempts.
+
+### 3. Dataset Composition
+
+The dataset contains:
+
+- 32 adversarial prompt-injection scenarios.
+- 8 clean control scenarios.
+- 40 total evaluation scenarios.
+
+Each scenario supports comparison between two conditions:
+
+1. Baseline instructions without additional trust-boundary guidance.
+2. Defensive instructions that explicitly identify external documents as untrusted content.
+
+The research will compare model responses under both conditions.
+
+### 4. AI Assistance and Research Transparency
+
+OpenAI's ChatGPT assisted with generating the initial dataset, Python evaluation framework and research documentation.
+
+The project distinguishes between AI-assisted research preparation and independently observed experimental findings.
+
+Human review will be used to assess the relevance of scenarios, examine model responses and interpret experimental results.
+
+### 5. Dataset Validation
+
+The dataset was validated using Python 3.9.6.
+
+The validation command was:
+
+python3 src/evaluate.py validate
+
+The program confirmed that all 40 scenarios satisfied the implemented structural validation requirements.
+
+Four automated Python unit tests also passed successfully.
+
+These results demonstrate that the evaluation software passed its implemented checks. They do not demonstrate that an AI model has successfully resisted prompt injection.
+
+### 6. Research Limitations
+
+The dataset is synthetic and relatively small.
+
+Some scenarios may not represent the complexity of real-world prompt-injection attacks.
+
+AI-assisted scenario generation may introduce selection bias, repeated patterns or unrealistic attack formulations.
+
+Evaluation results may vary depending on the language model, model version, configuration and testing environment.
+
+The research will report these limitations transparently.
+
+### 7. Future Research Development
+
+Future improvements may include:
+
+- Expanding the number and diversity of attack scenarios.
+- Evaluating multiple language models.
+- Testing additional defensive strategies.
+- Repeating experiments to measure response variability.
+- Introducing independent human review.
+- Strengthening statistical analysis of experimental findings.
+
+The objective is to establish a transparent and reproducible approach to investigating prompt-injection risks in AI assistants.
+
 Use more varied task domains and multiple independent annotators, add repeated runs and paired uncertainty estimates, investigate attack transfer across models and test application-level defences (strict data/tool separation) rather than relying solely on prompting.
