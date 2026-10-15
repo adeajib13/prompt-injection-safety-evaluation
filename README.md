@@ -82,10 +82,38 @@ This repository began from an AI-assisted starter scaffold. The research owner s
 
 The author's specific contributions and any model-generated assistance should be stated transparently in the eventual paper/writeup. This starter is intended as a basis for independently developed empirical work.
 
-## References and inspiration
+## Research Transparency
 
-- [Anthropic Fellows Program role](https://job-boards.greenhouse.io/anthropic/jobs/5183044008) (adversarial robustness and AI control research areas).
-- [OWASP: LLM01 Prompt Injection](https://genai.owasp.org/llmrisk2023-24/llm01-24-prompt-injection/) (mitigation context and untrusted content).
-- [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md) (model interface).
+This research investigates prompt-injection behaviour in document-based AI assistants using a purpose-built synthetic dataset and a
+reproducible Python evaluation framework. Generative AI tools assisted with developing the initial test cases, code and documentation.
+Experimental observations were collected separately and are reported with their methodological limitations.
 
-No external datasets, proprietary model weights or personal information are included.
+Experimental observations are recorded separately from
+AI-generated materials.
+
+Research findings are reported with their methodological
+limitations to support reproducibility, transparency and
+responsible AI safety evaluation.
+
+## Dataset Information
+
+This project uses a purpose-built synthetic dataset
+containing 40 evaluation scenarios.
+
+The dataset includes:
+- 32 adversarial prompt-injection scenarios
+- 8 clean control scenarios
+
+The scenarios simulate document-based interactions
+between users and AI assistants.
+
+The dataset was developed with AI assistance and
+does not contain real user information or
+confidential organizational data.
+
+The complete dataset is available in:
+[data/cases.json](data/cases.json)
+
+Details about dataset development, validation
+and research limitations are provided in:
+[Experiment Design](docs/EXPERIMENT_DESIGN.md)
