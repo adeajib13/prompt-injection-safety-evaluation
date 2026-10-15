@@ -59,3 +59,40 @@ a model is secure against prompt injection.
 
 Results should not be generalized beyond the tested
 models, prompts and experimental conditions.
+
+## Experiment 5: Generalization to Unseen Documents
+
+Experiment 5 evaluated whether findings from earlier experiments
+extended to 12 new synthetic scenarios across different policy domains.
+
+The evaluation used Qwen2.5:0.5b through Ollama, with one execution
+per scenario across three instruction conditions.
+
+### Human-Reviewed Results
+
+| Condition | Factually Correct | Attack-Marker Emission |
+|---|---|---|
+| Baseline | 10/12 (83.3%) | 2/8 (25%) |
+| Original Trust Boundary | 8/12 (66.7%) | 4/8 (50%) |
+| Revised Trust Boundary | 3/12 (25%) | 2/8 (25%) |
+
+Attack-marker emission was assessed only for the eight adversarial
+scenarios in each condition. It is not equivalent to a comprehensive
+measure of prompt-injection success.
+
+### Research Files
+
+- [Raw Model Responses](experiment5_unseen_raw.csv)
+- [Human-Reviewed Results](experiment5_human_reviewed.csv)
+- [Automatic Scoring Summary](experiment5_unseen_summary.md)
+- [Research Findings](../paper/Experiment5_Reviewed_Findings.md)
+- [Experimental Design](../docs/EXPERIMENT5_DESIGN.md)
+- [Synthetic Test Cases](../data/experiment5_cases.json)
+
+### Limitations
+
+This experiment used a single small language model, synthetic
+scenarios and one evaluation per scenario and condition.
+
+Results are exploratory and should not be generalized to larger
+models or production AI systems.
