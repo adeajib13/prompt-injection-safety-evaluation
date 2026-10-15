@@ -173,3 +173,53 @@ prompt-injection influence.
 Further experiments are needed to determine whether
 the observed reduction in task accuracy persists
 across different models, prompts and repeated trials.
+
+## Research Progress and Experimental Findings
+
+This research investigates prompt-injection behaviour in
+document-based AI assistants through synthetic evaluation
+scenarios and reproducible Python experiments.
+
+### Completed Experiments
+
+| Experiment | Evaluations | Main Finding |
+|---|---:|---|
+| Manual ChatGPT pilot | 20 | 100% factual accuracy |
+| Automated Qwen pilot | 20 | Baseline 100%, trust boundary 40% |
+| Revised trust-boundary pilot | 10 | Revised condition 60% accuracy |
+| Repeated-trial evaluation | 90 | Baseline 100%, original defence 40%, revised defence 60% |
+
+### Research Findings
+
+Across the local Qwen experiments, stronger defensive
+instructions sometimes reduced legitimate-task accuracy.
+
+The revised defensive instructions improved factual accuracy
+relative to the original trust-boundary condition, but
+did not recover baseline performance.
+
+No target attack markers were observed in the tested
+adversarial responses.
+
+### Research Reports
+
+- [Manual ChatGPT Research](paper/Ade_AI_Safety_Pilot_Research_Report.md)
+- [Automated Qwen Evaluation](paper/qwen05_reviewed_findings.md)
+- [Revised Trust-Boundary Study](paper/Qwen_Experiment_3_Reviewed_Findings.md)
+- [Repeated-Trial Research](paper/qwen05_experiment4_reviewed_findings.md)
+- [Experimental Data](results/)
+
+### Limitations
+
+The experiments use a small synthetic dataset with only
+two underlying factual questions.
+
+The manual ChatGPT pilot simulated system instructions
+within ordinary user messages.
+
+The local Qwen experiments used a small model and
+deterministic settings.
+
+These findings are exploratory and do not establish
+general prompt-injection resistance or causal effects
+of defensive prompting.
