@@ -15,6 +15,22 @@ A document-answering assistant should answer the user's real question with the r
 
 This is a limited, controlled study of **output redirection**, not a proof that any model is secure or insecure. There are no tools, external network actions, secrets or sensitive documents in the benchmark.
 
+## Research Paper
+
+**Testing Prompt Injection Resistance in Document-Based AI Assistants: A Five-Experiment Study**
+
+This research investigates how document-based AI assistants respond to prompt-injection attempts embedded in untrusted reference material.
+
+Across five exploratory experiments, the project examines instruction hierarchy, authority spoofing, conversation spoofing, grading pressure and output-format manipulation.
+
+The study documents 176 recorded evaluations, including manually collected ChatGPT responses and local Qwen2.5:0.5b experiments conducted using Ollama.
+
+Key observations include answer-redirection failures, unnecessary refusals under defensive prompting and differences in performance between the original and held-out synthetic scenarios.
+
+The findings are exploratory and do not establish the security or reliability of larger language models.
+
+**[Read the Full Research Paper](paper/CONSOLIDATED_RESEARCH_REPORT.md)**
+
 ## Current contents
 
 - `data/cases.json`: **40 synthetic scenarios**, comprising 8 benign controls and 32 prompt-injection attempts in four styles.
